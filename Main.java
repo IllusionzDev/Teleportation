@@ -44,19 +44,22 @@ public final class Main extends JavaPlugin implements CommandExecutor, TabComple
 
             for (Player onlinePlayer : Bukkit.getOnlinePlayers())
             {
-                if (onlinePlayer.getName().equalsIgnoreCase(playerName))
+                if (!onlinePlayer.getName().equalsIgnoreCase(playerName))
                 {
-                    if (ply.getUniqueId().equals(onlinePlayer.getUniqueId()))
-                    {
-                        ply.sendMessage(ChatColor.RED + "You can't teleport to yourself.");
-                        continue;
-                    }
-
-                    Location teleportTo = onlinePlayer.getLocation();
-                    ply.teleport(teleportTo);
-                    ply.sendMessage(ChatColor.GREEN + "You have teleported to " + ChatColor.BOLD + onlinePlayer.getName() + ChatColor.GREEN + ".");
+                    ply.sendMessage(ChatColor.RED + "There is no player named " + playerName + ".");
                     return true;
                 }
+
+                if (ply.getUniqueId().equals(onlinePlayer.getUniqueId()))
+                {
+                    ply.sendMessage(ChatColor.RED + "You can't teleport to yourself.");
+                    return true;
+                }
+
+                Location teleportTo = onlinePlayer.getLocation();
+                ply.teleport(teleportTo);
+                ply.sendMessage(ChatColor.GREEN + "You have teleported to " + ChatColor.BOLD + onlinePlayer.getName() + ChatColor.GREEN + ".");
+                return true;
             }
         }
 
