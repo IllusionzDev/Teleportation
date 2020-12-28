@@ -56,8 +56,7 @@ public final class Main extends JavaPlugin implements CommandExecutor, TabComple
                     return true;
                 }
 
-                Location teleportTo = onlinePlayer.getLocation();
-                ply.teleport(teleportTo);
+                ply.teleport(onlinePlayer.getLocation());
                 ply.sendMessage(ChatColor.GREEN + "You have teleported to " + ChatColor.BOLD + onlinePlayer.getName() + ChatColor.GREEN + ".");
                 return true;
             }
