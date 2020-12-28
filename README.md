@@ -1,4 +1,4 @@
-A simple Minecraft teleportation plugin.
+A simple Minecraft teleportation plugin. (1.15.2)
 
 - Command Usage: /go [player name]
 
