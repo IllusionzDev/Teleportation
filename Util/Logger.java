@@ -1,4 +1,4 @@
-    private static String consoleWatermark = "[+] Teleportation ";
+    private final static String consoleWatermark = "[+] Teleportation ";
 
     private final static String RESET = "\u001B[0m";
     private final static String RED = "\u001B[31m";
